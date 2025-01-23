@@ -128,7 +128,16 @@ export default function Home() {
               })
             }
           </div>
+      </div>
+      <div className='flex flex-col items-center gap-5 pb-[15vh]'>
+        <a className=' h-[10vh] text-3xl font-mono font-bold'>▚ Contact</a>
+        <div>
+          <a className='text-xl'>find me here__stephchen55@gmail.com</a>
         </div>
+      </div>
+      <div className='flex h-[5vh] bg-[#DEDEDE] justify-center items-center mx-auto'>
+        <a className='text-sm font-mono'>2025. Personal Website designed by Stephanie Chen</a>
+      </div>
     </main>
   );
 }
