@@ -1,101 +1,73 @@
-import Image from "next/image";
+'use client'
+import Picture1 from '../public/vercel.svg'
+import Picture2 from '../public/vercel.svg'
+import Picture3 from '../public/vercel.svg'
+import Lenis from 'lenis';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+import { StaticImageData } from 'next/image';
+import { motion, useTransform, useScroll, MotionValue } from "framer-motion"
+
+interface SlideProps {
+  left: string;
+  src: StaticImageData;
+  direction: 'left' | 'right';
+  progress: MotionValue<number>;
+}
+
+const Slide = (props: SlideProps) => {
+  const direction = props.direction == 'left' ? -1 : 1;
+  const translateX = useTransform(props.progress, [0, 1], [150 * direction, -150 * direction])
+
+  return (
+    <motion.div style={{x: translateX, left: props.left}} className="relative flex whitespace-nowrap">
+      <Phrase src={props.src}/>
+      <Phrase src={props.src}/>
+      <Phrase src={props.src}/>
+    </motion.div>
+  )
+}
+  
+const Phrase = ({src}: { src: StaticImageData }) => {
+  return (
+    <div className={'px-5 flex gap-5 items-center'}>
+    <p className='text-[7.5vw]'>stef uh nee</p>
+    <span className="relative h-[7.5vw] aspect-[4/2] rounded-full overflow-hidden">
+        <Image style={{objectFit: "cover"}} src={src} alt="image" fill/>
+    </span>
+    </div>
+  )
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  const container = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'end start']
+  })
+
+  useEffect( () => {
+    const lenis = new Lenis()
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
+
+  return (
+    <main className='overflow-hidden'>
+      <div className='h-[10vh]'/>
+      <div ref={container}>
+        <Slide left="0" src={Picture2} direction={'right'} progress={scrollYProgress}/>
+        <Slide left="0" src={Picture1} direction={'left'} progress={scrollYProgress}/>
+        <Slide left="0" src={Picture2} direction={'right'} progress={scrollYProgress}/>
+        <Slide left="0" src={Picture3} direction={'left'} progress={scrollYProgress}/>
+      </div>
+      <div className='h-[100vh]' />
+    </main>
   );
 }
