@@ -20,6 +20,8 @@ const projects = [
   {
     title: "Recipe Generator",
     description: "A React web application powered by OpenAI API to generate recipes. Users can select their ingredients and create customized recipes with ease.",
+    time: "Jan 2024",
+    skills: ["React, Node.js, MongoDB"],
     src: Work1,
     url: "https://github.com/VT-SE-Fall2023/groupx-recipe-frontend",
     color: "#DEDEDE"
@@ -27,6 +29,8 @@ const projects = [
   {
     title: "Diaita",
     description: "Diaita aids users in preventing type 2 diabetes through cognitive behavioral therapy. Implemented the user interface for the mobile app, which provides personalized diet and activity plans.",
+    time: "July 2023",
+    skills: ["Flutter"],
     src: Work2,
     url: "https://diaita.github.io",
     color: "#C9CAC9"
@@ -34,6 +38,8 @@ const projects = [
   {
     title: "Noisserpmi",
     description: "Noisserpmi is my work for the graduation exhibition. This artwork consists of interactive websites built with p5.js. Data from accelerometers on mobile devices and Arduino sensors are collected to trigger animated elements.",
+    time: "May 2023",
+    skills: ["JavaScript, Node.js, p5.js"],
     src: Work3,
     url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
     color: "#B5B5B5"

@@ -21,7 +21,7 @@
   .cardContainer .card h2 {
     text-align: center;
     margin: 0px;
-    font-size: 28px;
+    font-size: 24px;
   }
   
   .cardContainer .card .body {
@@ -41,10 +41,6 @@
     font-size: 16px;
   }
   
-  .cardContainer .card .body .description p::first-letter {
-    font-size: 28px;
-    font-family: 'Title';
-  }
   
   .cardContainer .card .body .description span {
     display: flex;
@@ -60,7 +56,7 @@
   
   .cardContainer .card .body .imageContainer {
     position: relative;
-    width: 60%;
+    width: 50%;
     height: 100%;
     border-radius: 25px;
     overflow: hidden;
