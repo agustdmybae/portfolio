@@ -93,9 +93,9 @@ export default function Home() {
         <div className='h-[15vh] bg-[#DEDEDE]'/>
         <div className='h-[20vh]' />
       </div>
-      <div className='flex flex-col items-center gap-5'>
+      <div className='flex flex-col items-center gap-5 pb-10'>
         <a className='h-[10vh] text-3xl font-mono font-bold'>▚ About Me</a>
-        <div className='h-[50vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-44 mx-auto pt-32'>
+        <div className='h-[50vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-80 mx-auto pt-32'>
           <a className='text-2xl'>
             Stephanie is a Full-stack Developer with 2 years of experience in web development. She is passionate about interactive web design, combining technical skills with creativity to develop engaging user experiences.
             <br />
@@ -110,13 +110,16 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mt-50 mb-50">
-        {
-          projects.map( (project, i) => {
-            return <Card key={`p_${i}`} {...project} i={i}/>
-          })
-        }
-      </div>
+      <div className='flex flex-col justify-center items-center'>
+        <a className='h-[1vh] text-3xl font-mono font-bold'>▚ Selected Projects</a>
+          <div className="mb-20">
+            {
+              projects.map( (project, i) => {
+                return <Card key={`p_${i}`} {...project} i={i}/>
+              })
+            }
+          </div>
+        </div>
     </main>
   );
 }
