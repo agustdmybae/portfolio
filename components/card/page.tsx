@@ -3,7 +3,10 @@ import Image from 'next/image';
 import styles from './style.module.css';
 
 export const Card = ({title, description, src, time, skills, linkDescription, url, color, i}: {title: string, description: string, time : string, skills: string[], linkDescription: string, src: string, url: string, color: string, i: number}) => {
-
+  const skillItems = skills.map((skill,i) => (
+    <div key={`p_${i}`} className='px-4 inline-block bg-black text-white rounded-xl text-center'>{skill}</div>
+  ))
+  
   return (
     <div className={styles.cardContainer}>
       <div 
@@ -22,9 +25,7 @@ export const Card = ({title, description, src, time, skills, linkDescription, ur
             </span>}
             <p className='pt-12'>{time}</p>
             <div className='flex flex-row pt-3 gap-4'>
-              {skills.map((skill,i) => (
-                <div key={`p_${i}`} className='px-4 inline-block bg-black text-white rounded-xl text-center'>{skill}</div>
-              ))}     
+              {skillItems}     
             </div>
           </div>
 

@@ -104,7 +104,7 @@ export default function Home() {
       </div>
       <div className='flex flex-col items-center gap-5 pb-10'>
         <a className='h-[10vh] text-3xl font-mono font-bold'>▚ About Me</a>
-        <div className='h-[50vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-80 mx-auto pt-32'>
+        <div className='h-[50vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-80 mx-auto pt-40'>
           <a className='text-2xl'>
             Stephanie is a Full-stack Developer with 2 years of experience in web development. She is passionate about interactive web design, combining technical skills with creativity to develop engaging user experiences.
             <br />
