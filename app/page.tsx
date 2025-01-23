@@ -1,5 +1,5 @@
 'use client'
-import Picture4 from '../public/images/about-profile.png'
+import Picture4 from '../public/images/notion-portrait.png'
 import Work1 from '../public/images/recipe.png'
 import Work3 from '../public/images/work2.png'
 import Work2 from '../public/images/diaita.png'
@@ -84,27 +84,31 @@ export default function Home() {
     <main>
       <div  className='overflow-hidden'>
         <div className='h-[15vh] bg-[#DEDEDE]'/>
-        <div ref={container} className='bg-[#DEDEDE] h-[70vh]'>
+        <div ref={container} className='bg-[#DEDEDE] h-[70vh] font-mono'>
           <Slide left={10} word="stef-uh-nee ▘" direction={'right'} progress={scrollYProgress}/>
           <Slide left={-50} word="welcome to my world ▚ " direction={'left'} progress={scrollYProgress}/>
           <Slide left={-20} word="stef-uh-nee ▟" direction={'right'} progress={scrollYProgress}/>
           <Slide left={-120} word="welcome to my world ▗" direction={'left'} progress={scrollYProgress}/>
         </div>
         <div className='h-[15vh] bg-[#DEDEDE]'/>
-        <div className='h-[30vh]' />
+        <div className='h-[20vh]' />
       </div>
-      <div className='h-[50vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-44 mx-auto'>
-        <a className='text-2xl'>
-          Stephanie is a Full-stack Developer with a passion for building digital products that impact the world. 
-          <br />
-          <br />
-          In love with art and design, she enjoys creating clean and appealing interfaces. 
-          She is also interested in Big Data, hoping to leverage data information to build insightful applications. 
-          <br />
-          <br />
-          Stephanie enjoys music, dance, and exhibitions in her free time.
-        </a>
-        <Image width={1000} height={1000} src={Picture4} alt="image"/>
+      <div className='flex flex-col items-center gap-5'>
+        <a className='h-[10vh] text-3xl font-mono font-bold'>▚ About Me</a>
+        <div className='h-[50vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-44 mx-auto pt-32'>
+          <a className='text-2xl'>
+            Stephanie is a Full-stack Developer with 2 years of experience in web development. She is passionate about interactive web design, combining technical skills with creativity to develop engaging user experiences.
+            <br />
+            <br />
+            Stephanie is currently a Computer Science grad student at New York University. She focuses her studies on Big Data, hoping to leverage data to build insightful applications. 
+            <br />
+            <br />
+            In her free time, she enjoys music, dance, and coffee.
+          </a>
+          <div className='w-[60vw] border-4 border-solid border-black'>
+            <Image src={Picture4} alt="image"/>
+          </div>
+        </div>
       </div>
       <div className="mt-50 mb-50">
         {
