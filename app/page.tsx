@@ -2,6 +2,7 @@
 import Picture1 from '../public/vercel.svg'
 import Picture2 from '../public/vercel.svg'
 import Picture3 from '../public/vercel.svg'
+import Picture4 from '../public/images/about-profile.png'
 import Lenis from 'lenis';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
@@ -70,13 +71,18 @@ export default function Home() {
         </div>
         <div className='h-[50vh]' />
       </div>
-      <div className='h-[10vh] w-[50vw] flex items-center justify-center text-center mx-auto pb-56'>
+      <div className='h-[10vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-56 mx-auto'>
         <a className='text-2xl'>
-          Stephanie is a Computer Science grad student at New York University. specializing in fullstack development. My passion lies in building digital products that bring meaningful impacts to the world. 
+          Stephanie is a Full-stack Developer with a passion for building digital products that impact the world. 
           <br />
           <br />
-          In addition to my love in technology and design,  I also enjoy music, dance, and exhibitions.
+          In love with art and design, she enjoys creating clean and appealing interfaces. 
+          She is also interested in Big Data, hoping to leverage data information to build insightful applications. 
+          <br />
+          <br />
+          Stephanie enjoys music, dance, and exhibitions in her free time.
         </a>
+        <Image width={1000} height={1000} src={Picture4} alt="image"/>
       </div>
     </main>
   );
