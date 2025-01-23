@@ -59,15 +59,25 @@ export default function Home() {
   }, [])
 
   return (
-    <main className='overflow-hidden'>
-      <div className='h-[10vh]'/>
-      <div ref={container}>
-        <Slide left="0" src={Picture2} direction={'right'} progress={scrollYProgress}/>
-        <Slide left="0" src={Picture1} direction={'left'} progress={scrollYProgress}/>
-        <Slide left="0" src={Picture2} direction={'right'} progress={scrollYProgress}/>
-        <Slide left="0" src={Picture3} direction={'left'} progress={scrollYProgress}/>
+    <main>
+      <div  className='overflow-hidden'>
+        <div className='h-[10vh]'/>
+        <div ref={container}>
+          <Slide left="0" src={Picture2} direction={'right'} progress={scrollYProgress}/>
+          <Slide left="0" src={Picture1} direction={'left'} progress={scrollYProgress}/>
+          <Slide left="0" src={Picture2} direction={'right'} progress={scrollYProgress}/>
+          <Slide left="0" src={Picture3} direction={'left'} progress={scrollYProgress}/>
+        </div>
+        <div className='h-[50vh]' />
       </div>
-      <div className='h-[100vh]' />
+      <div className='h-[10vh] w-[50vw] flex items-center justify-center text-center mx-auto pb-56'>
+        <a className='text-2xl'>
+          Stephanie is a Computer Science grad student at New York University. specializing in fullstack development. My passion lies in building digital products that bring meaningful impacts to the world. 
+          <br />
+          <br />
+          In addition to my love in technology and design,  I also enjoy music, dance, and exhibitions.
+        </a>
+      </div>
     </main>
   );
 }
