@@ -3,11 +3,15 @@ import Picture1 from '../public/vercel.svg'
 import Picture2 from '../public/vercel.svg'
 import Picture3 from '../public/vercel.svg'
 import Picture4 from '../public/images/about-profile.png'
+import Work1 from '../public/images/recipe.png'
+import Work3 from '../public/images/work2.png'
+import Work2 from '../public/images/diaita.png'
 import Lenis from 'lenis';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { StaticImageData } from 'next/image';
 import { motion, useTransform, useScroll, MotionValue } from "framer-motion"
+import Card from '../components/card/page';
 
 interface SlideProps {
   left: string;
@@ -15,6 +19,30 @@ interface SlideProps {
   direction: 'left' | 'right';
   progress: MotionValue<number>;
 }
+
+const projects = [
+  {
+    title: "Recipe Generator",
+    description: "A React web application powered by OpenAI API to generate recipes. Users can select their ingredients and create customized recipes with ease.",
+    src: Work1,
+    url: "https://github.com/VT-SE-Fall2023/groupx-recipe-frontend",
+    color: "#BBACAF"
+  },
+  {
+    title: "Diaita",
+    description: "Diaita aids users in preventing type 2 diabetes through cognitive behavioral therapy. Implemented the user interface for the mobile app, which provides personalized diet and activity plans.",
+    src: Work2,
+    url: "https://diaita.github.io",
+    color: "#977F6D"
+  },
+  {
+    title: "Noisserpmi",
+    description: "Noisserpmi is my work for the graduation exhibition. This artwork consists of interactive websites built with p5.js. Data from accelerometers on mobile devices and Arduino sensors are collected to trigger animated elements.",
+    src: Work3,
+    url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
+    color: "#C2491D"
+  }
+]
 
 const Slide = (props: SlideProps) => {
   const direction = props.direction == 'left' ? -1 : 1;
@@ -83,6 +111,13 @@ export default function Home() {
           Stephanie enjoys music, dance, and exhibitions in her free time.
         </a>
         <Image width={1000} height={1000} src={Picture4} alt="image"/>
+      </div>
+      <div className="mt-50 mb-50">
+        {
+          projects.map( (project, i) => {
+            return <Card key={`p_${i}`} {...project} i={i}/>
+          })
+        }
       </div>
     </main>
   );
