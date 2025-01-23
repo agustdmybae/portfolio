@@ -14,7 +14,7 @@ import { motion, useTransform, useScroll, MotionValue } from "framer-motion"
 import Card from '../components/card/page';
 
 interface SlideProps {
-  left: string;
+  left: number;
   src: StaticImageData;
   direction: 'left' | 'right';
   progress: MotionValue<number>;
@@ -26,21 +26,21 @@ const projects = [
     description: "A React web application powered by OpenAI API to generate recipes. Users can select their ingredients and create customized recipes with ease.",
     src: Work1,
     url: "https://github.com/VT-SE-Fall2023/groupx-recipe-frontend",
-    color: "#BBACAF"
+    color: "#DEDEDE"
   },
   {
     title: "Diaita",
     description: "Diaita aids users in preventing type 2 diabetes through cognitive behavioral therapy. Implemented the user interface for the mobile app, which provides personalized diet and activity plans.",
     src: Work2,
     url: "https://diaita.github.io",
-    color: "#977F6D"
+    color: "#C9CAC9"
   },
   {
     title: "Noisserpmi",
     description: "Noisserpmi is my work for the graduation exhibition. This artwork consists of interactive websites built with p5.js. Data from accelerometers on mobile devices and Arduino sensors are collected to trigger animated elements.",
     src: Work3,
     url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#C2491D"
+    color: "#B5B5B5"
   }
 ]
 
@@ -90,16 +90,17 @@ export default function Home() {
   return (
     <main>
       <div  className='overflow-hidden'>
-        <div className='h-[10vh]'/>
-        <div ref={container}>
-          <Slide left="0" src={Picture2} direction={'right'} progress={scrollYProgress}/>
-          <Slide left="0" src={Picture1} direction={'left'} progress={scrollYProgress}/>
-          <Slide left="0" src={Picture2} direction={'right'} progress={scrollYProgress}/>
-          <Slide left="0" src={Picture3} direction={'left'} progress={scrollYProgress}/>
+        <div className='h-[10vh] bg-[#DEDEDE]'/>
+        <div ref={container} className='bg-[#DEDEDE]'>
+          <Slide left={50} src={Picture2} direction={'right'} progress={scrollYProgress}/>
+          <Slide left={-50} src={Picture1} direction={'left'} progress={scrollYProgress}/>
+          <Slide left={50} src={Picture2} direction={'right'} progress={scrollYProgress}/>
+          <Slide left={-50} src={Picture3} direction={'left'} progress={scrollYProgress}/>
         </div>
-        <div className='h-[50vh]' />
+        <div className='h-[20vh] bg-[#DEDEDE]'/>
+        <div className='h-[30vh]' />
       </div>
-      <div className='h-[10vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-56 mx-auto'>
+      <div className='h-[50vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-44 mx-auto'>
         <a className='text-2xl'>
           Stephanie is a Full-stack Developer with a passion for building digital products that impact the world. 
           <br />
