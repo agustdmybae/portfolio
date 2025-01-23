@@ -1,7 +1,4 @@
 'use client'
-import Picture1 from '../public/vercel.svg'
-import Picture2 from '../public/vercel.svg'
-import Picture3 from '../public/vercel.svg'
 import Picture4 from '../public/images/about-profile.png'
 import Work1 from '../public/images/recipe.png'
 import Work3 from '../public/images/work2.png'
@@ -9,13 +6,12 @@ import Work2 from '../public/images/diaita.png'
 import Lenis from 'lenis';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
-import { StaticImageData } from 'next/image';
 import { motion, useTransform, useScroll, MotionValue } from "framer-motion"
 import Card from '../components/card/page';
 
 interface SlideProps {
   left: number;
-  src: StaticImageData;
+  word: string;
   direction: 'left' | 'right';
   progress: MotionValue<number>;
 }
@@ -50,20 +46,17 @@ const Slide = (props: SlideProps) => {
 
   return (
     <motion.div style={{x: translateX, left: props.left}} className="relative flex whitespace-nowrap">
-      <Phrase src={props.src}/>
-      <Phrase src={props.src}/>
-      <Phrase src={props.src}/>
+      <Phrase word={props.word}/>
+      <Phrase word={props.word}/>
+      <Phrase word={props.word}/>
     </motion.div>
   )
 }
   
-const Phrase = ({src}: { src: StaticImageData }) => {
+const Phrase = ({word}: { word: string }) => {
   return (
-    <div className={'px-5 flex gap-5 items-center'}>
-    <p className='text-[7.5vw]'>stef uh nee</p>
-    <span className="relative h-[7.5vw] aspect-[4/2] rounded-full overflow-hidden">
-        <Image style={{objectFit: "cover"}} src={src} alt="image" fill/>
-    </span>
+    <div className={'px-5 flex gap-6 items-center'}>
+    <p className='text-[5.5vw]'>{word}</p>
     </div>
   )
 }
@@ -90,14 +83,14 @@ export default function Home() {
   return (
     <main>
       <div  className='overflow-hidden'>
-        <div className='h-[10vh] bg-[#DEDEDE]'/>
-        <div ref={container} className='bg-[#DEDEDE]'>
-          <Slide left={50} src={Picture2} direction={'right'} progress={scrollYProgress}/>
-          <Slide left={-50} src={Picture1} direction={'left'} progress={scrollYProgress}/>
-          <Slide left={50} src={Picture2} direction={'right'} progress={scrollYProgress}/>
-          <Slide left={-50} src={Picture3} direction={'left'} progress={scrollYProgress}/>
+        <div className='h-[15vh] bg-[#DEDEDE]'/>
+        <div ref={container} className='bg-[#DEDEDE] h-[70vh]'>
+          <Slide left={10} word="stef-uh-nee ▘" direction={'right'} progress={scrollYProgress}/>
+          <Slide left={-50} word="welcome to my world ▚ " direction={'left'} progress={scrollYProgress}/>
+          <Slide left={-20} word="stef-uh-nee ▟" direction={'right'} progress={scrollYProgress}/>
+          <Slide left={-120} word="welcome to my world ▗" direction={'left'} progress={scrollYProgress}/>
         </div>
-        <div className='h-[20vh] bg-[#DEDEDE]'/>
+        <div className='h-[15vh] bg-[#DEDEDE]'/>
         <div className='h-[30vh]' />
       </div>
       <div className='h-[50vh] w-[70vw] flex flex-row gap-20 items-center justify-center text-left pb-44 mx-auto'>
