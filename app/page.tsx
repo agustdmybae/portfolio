@@ -3,6 +3,7 @@ import Picture4 from '../public/images/notion-portrait.png'
 import Work1 from '../public/images/recipe.png'
 import Work3 from '../public/images/work2.png'
 import Work2 from '../public/images/diaita.png'
+import Work4 from '../public/images/bunchful.png'
 import Lenis from 'lenis';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
@@ -18,6 +19,16 @@ interface SlideProps {
 
 const projects = [
   {
+    title: "Bunchful Post",
+    description: "A Streamlit app built for the company Bunchful for content management over platforms such as Medium and Facebook. It supports features including content generation, image suggestion, and automated posting.",
+    time: "Aug 2024",
+    linkDescription: "Project on Github",
+    skills: ["Python, Streamlit, Gemini API"],
+    src: Work4,
+    url: "https://github.com/Bunchful-2024/bunchful-post-frontend",
+    color: "#DEDEDE"
+  },
+  {
     title: "Recipe Generator",
     description: "A React web application powered by OpenAI API to generate recipes. Users can select their ingredients and create customized recipes with ease.",
     time: "Jan 2024",
@@ -25,7 +36,7 @@ const projects = [
     skills: ["React, Node.js, MongoDB"],
     src: Work1,
     url: "https://github.com/VT-SE-Fall2023/groupx-recipe-frontend",
-    color: "#DEDEDE"
+    color: "#C9CAC9"
   },
   {
     title: "Diaita",
@@ -35,7 +46,7 @@ const projects = [
     skills: ["Flutter"],
     src: Work2,
     url: "https://diaita.github.io",
-    color: "#C9CAC9"
+    color: "#B5B5B5"
   },
   {
     title: "Noisserpmi",
@@ -45,7 +56,7 @@ const projects = [
     skills: ["JavaScript, Node.js, p5.js"],
     src: Work3,
     url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#B5B5B5"
+    color: "#A0A1A0"
   }
 ]
 
