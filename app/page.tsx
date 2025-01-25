@@ -120,7 +120,7 @@ export default function Home() {
             Stephanie is a Full-stack Developer with 2 years of experience in web development. She is passionate about interactive web design, combining technical skills with creativity to develop engaging user experiences.
             <br />
             <br />
-            Stephanie is currently a Computer Science grad student at New York University. She focuses her studies on Big Data, hoping to leverage data to build insightful applications. 
+            Currently a Computer Science grad student at New York University, Stephanie focuses her studies on Big Data, hoping to leverage data to build insightful applications. 
             <br />
             <br />
             In her free time, she enjoys music, dance, and coffee.
